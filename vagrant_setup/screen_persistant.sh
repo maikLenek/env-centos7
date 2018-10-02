@@ -1,15 +1,5 @@
 #!/usr/bin/env bash
 
-printf "#################################\n"
-printf "#####      Start env        #####\n"
-printf "##### Checking requirements #####\n"
-printf "#################################\n\n"
-
-source /sry/bettingatsage/.venv/bin/activate
-pip install -r /sry/bettingatsage/test_requirements.txt
-
-
-
 cat > ~/.screenrc <<EOF
 defutf8 on
 defencoding UTF-8
@@ -43,7 +33,9 @@ hardstatus string "%{= bk}%-Lw%{= rW}%50> %n%f* %t %{-}%+Lw%< %= %{= Gk} %H %{= 
 EOF
 
 cat << "EOF"
-START
+#########
+# START #
+#########
 EOF
 
 #screen -t Htop       1 htop
