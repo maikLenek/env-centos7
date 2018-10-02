@@ -1,16 +1,9 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
-wget https://bootstrap.pypa.io/get-pip.py
-sudo python get-pip.py
-
-printf "#################################\n"
-printf "##### Installing virtualenv #####\n"
-printf "#################################\n\n"
-sudo pip install --upgrade pip
-sudo pip install virtualenv
-
-cd /sry/bettingatsage/
-virtualenv .venv -p python3 --always-copy
-printf "#################################\n"
-printf "#####  End of Installation  #####\n"
-printf "#################################\n\n"
+echo "#############################"
+echo "#      Python 3 install     #"
+echo "#############################"
+sudo yum -y install python36u
+sudo yum -y install python36u-pip
+sudo yum -y install python36u-devel
+sudo pip3.6 install --upgrade pip

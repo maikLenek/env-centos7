@@ -27,19 +27,7 @@ defbce on
 #default windows
 screen -t Htop       1 htop
 screen -t MC         2 mc
-screen -t Python     3 python
-screen -t PSQL       4 sudo su - postgres
-select 4
-stuff "psql^M"
-chdir /sry/bettingatsage
-screen -t Bash       5 bash
-select 5
-stuff "export SQL_SETUP=psql://myapp:dbpass@localhost:5432/myapp^M"
-stuff "source /sry/bettingatsage/.venv/bin/activate^M"
-stuff "cd /sry/bettingatsage/bettingatsage^M"
-screen -t BettServer 6 bash
-select 6
-stuff "export SQL_SETUP=psql://myapp:dbpass@localhost:5432/myapp; source /sry/bettingatsage/.venv/bin/activate; python /sry/bettingatsage/bettingatsage/manage.py runserver 0.0.0.0:8000^M"
+screen -t Python     3 python3.6
 
 bind c screen 1
 bind 0 select 10
@@ -54,17 +42,22 @@ hardstatus string "%{= bk}%-Lw%{= rW}%50> %n%f* %t %{-}%+Lw%< %= %{= Gk} %H %{= 
 
 EOF
 
-printf "#################################\n"
-printf "#####  READY TO GO BETTING  #####\n"
-printf "#################################\n\n"
-
 cat << "EOF"
-  ____       _   _   _                          _____
- |  _ \     | | | | (_)                ____    / ____|
- | |_) | ___| |_| |_ _ _ __   __ _    / __ \  | (___   __ _  __ _  ___
- |  _ < / _ \ __| __| | '_ \ / _` |  / / _` |  \___ \ / _` |/ _` |/ _ \
- | |_) |  __/ |_| |_| | | | | (_| | | | (_| |  ____) | (_| | (_| |  __/
- |____/ \___|\__|\__|_|_| |_|\__, |  \ \__,_| |_____/ \__,_|\__, |\___|
-                              __/ |   \____/                 __/ |
-                             |___/                          |___/
+START
 EOF
+
+#screen -t Htop       1 htop
+#screen -t MC         2 mc
+#screen -t Python     3 python
+#screen -t PSQL       4 sudo su - postgres
+#select 4
+#stuff "psql^M"
+#chdir /sry/bettingatsage
+#screen -t Bash       5 bash
+#select 5
+#stuff "export SQL_SETUP=psql://myapp:dbpass@localhost:5432/myapp^M"
+#stuff "source /sry/bettingatsage/.venv/bin/activate^M"
+#stuff "cd /sry/bettingatsage/bettingatsage^M"
+#screen -t BettServer 6 bash
+#select 6
+#stuff "export SQL_SETUP=psql://myapp:dbpass@localhost:5432/myapp; source /sry/bettingatsage/.venv/bin/activate; python /sry/bettingatsage/bettingatsage/manage.py runserver 0.0.0.0:8000^M"
