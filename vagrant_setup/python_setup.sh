@@ -1,7 +1,7 @@
 #!/bin/sh
 
 echo "#############################"
-echo "#      Python 3 install     #"
+echo "#      Python 3.6 install     #"
 echo "#############################"
 sudo yum -y install python36u
 sudo yum -y install python36u-pip

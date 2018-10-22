@@ -22,6 +22,7 @@ Vagrant.configure("2") do |config|
 	config.vm.provision "shell", :path => "vagrant_setup/python_setup.sh"
 	config.vm.provision "shell", :path => "vagrant_setup/postgres_setup.sh"
 	config.vm.provision "shell", :path => "vagrant_setup/node_setup.sh"
+	config.vm.provision "shell", :path => "vagrant_setup/screen_applications.sh"
 
 	config.vm.provision :shell, :path => "vagrant_setup/screen_persistant.sh", privileged: false, run: "always", preserve_order: true
 
